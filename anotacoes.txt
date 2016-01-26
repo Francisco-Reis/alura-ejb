@@ -1,0 +1,37 @@
+============= EJB ================
+Enterprise Java Beans
+
+Classes que acessam servicoes do servidor de aplicacoes e sao gerenciadas por ele.
+Sao inicializados auto pelo servidor.
+Ex:
+Pool de Conexoes
+Error handling
+Web Services
+
+Annotation @Stateless:
+Faz a classe se transformar em uma EJB (Tipo Stateless Session Bean)
+
+JNDI:
+Registro das EJBs no servidor de aplicacoes.
+O servidor registra as EJBs ao inicializar e usa esses registros para localiza-las
+
+Annotation @Inject:
+Faz com que o EJB seja instanciado pelo servidor de aplicacoes
+
+Servidor de Aplicações que implemente as especificações da arquitetura Java Enterprise Edition (JEE)
+Tomcat (Parcial)
+Jboss
+Glassfish
+
+As regras de negócio são implementadas nos 'Session Beans' (unidades EJB)
+
+Tipo de EJB: Stateless Session Bean
+não mantém estado de conversão com o cliente,
+não tem compromisso de manter uma sessão,
+são intercambiáveis e
+podem ser alocados de um pool e são EJBs econômicos;
+
+Pagina login livraria:
+http://localhost:8080/livraria/login.xhtml
+USR:admin
+PWD:pass

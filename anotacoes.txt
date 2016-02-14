@@ -35,3 +35,27 @@ Pagina login livraria:
 http://localhost:8080/livraria/login.xhtml
 USR:admin
 PWD:pass
+
+Metodos CallBack:
+Sao chamados quando o appserver cria o objeto, atraves da annotation @PostConstruct
+
+POOL DE SESSION BEAN:
+Sao configuraveis. No WildFly, esta no arquivo:
+<home>/satandalone/configurations/standalone.xml
+O numero de pools está configurado no elemento: <pools>, atributo max-pool-size
+
+EJB TIPO SINGLETON:
+Garante que só existirá um objeto
+Só faz sentidos para Configuraçoes e Servicos
+Use o annotation @Singleton
+
+Annotation @Startup:
+Cria o objeto ao subir o appserver e nao sob demanda
+Também chamada Eager Inicialization
+
+DICA JAVA: Thread.sleep(20000); // dorme por 20 segundos
+
+EJB TIPO STATEFUL (SBSF):
+Objetos proprios do cliente, ex: Carrinho de Compras, cada cliente tem o seu
+É um objeto que nao usa pools.
+Funciona como o servlet 'HttpSession'. Geralmente a servlet é usada ao inves do bean.

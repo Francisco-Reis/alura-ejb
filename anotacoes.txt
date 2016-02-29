@@ -59,3 +59,21 @@ EJB TIPO STATEFUL (SBSF):
 Objetos proprios do cliente, ex: Carrinho de Compras, cada cliente tem o seu
 É um objeto que nao usa pools.
 Funciona como o servlet 'HttpSession'. Geralmente a servlet é usada ao inves do bean.
+
+JPA:
+Para injetar EntityManager, principal classe do JPA, usuamos a anotation
+@PersistenceContext ao inves do simples @Inject
+
+Como o EntityManeger:
+.persist(...) : salva os dados na base
+.find(...) ou .getReference(...) : Busca os dados na base
+
+==persistence.xml==
+Devemos definir um dataqsource em ??? e referencia-lo com a tag
+<jta-data-source>java:/NOME-DATASUORCE</jta-data-source>
+
+Preparando o Wildfly para usar o Mysql:
+A partir da pasta HOME, crie o seguinte subdiretório: $JBOSS_HOME/modules/com/mysql/main
+
+CONTAINER MANAGED TRANSACTION (CMT)
+Padrão do JPA que faz o Appserver gerenciar as transações automaticamente.
